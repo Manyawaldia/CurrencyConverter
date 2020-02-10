@@ -2,6 +2,7 @@ package com.example.lab2milestone2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,13 +22,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickFunction (View view){
-        Log.i("Info", "Button Pressed");
-    }
 
-    public void convert(String s){
+        Log.i("Info", "Button Pressed");
+        EditText myTextField = (EditText) findViewById(R.id.myTextField);
+        String str = myTextField.getText().toString();
+
         Intent intent = new Intent(this, Convert.class);
-        intent.putExtra("message",s);
+        intent.putExtra("message",str);
         startActivity(intent);
     }
+
+
+
+
+
 
 }
